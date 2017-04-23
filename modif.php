@@ -85,18 +85,14 @@ $totalRows_modif = mysql_num_rows($modif);
   </p>
   <table width="200">
     <tr>
-      <td><a href="docOD/000000001305417863.jpg?<?php echo $row_modif['id']; ?>=<?php echo $row_modif['tipo']; ?>">
-        <label>
-          <input name="RadioGroup1" type="radio" id="RadioGroup1_0" value="0" checked="checked" />
-          Orden Dia</label>
-      </a></td>
+      <td><label>
+        <input <?php if (!(strcmp($row_modif['tipo'],"0"))) {echo "checked=\"checked\"";} ?> name="RadioGroup1" type="radio" id="RadioGroup1_0" value="0" checked="checked" />
+        Orden Dia</label></td>
     </tr>
     <tr>
-      <td><a href="docOD/000000001305417863.jpg?<?php echo $row_modif['id']; ?>=<?php echo $row_modif['tipo']; ?>">
-        <label>
-          <input type="radio" name="RadioGroup1" value="1" id="RadioGroup1_1" />
-          Adicion</label>
-      </a></td>
+      <td><label>
+        <input <?php if (!(strcmp($row_modif['tipo'],"1"))) {echo "checked=\"checked\"";} ?> type="radio" name="RadioGroup1" value="1" id="RadioGroup1_1" />
+        Adicion</label></td>
     </tr>
   </table>
   <p>&nbsp;</p>

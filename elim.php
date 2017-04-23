@@ -31,6 +31,23 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
+if (((isset($_GET['idelim'])) && ($_GET['idelim'] != "")) && ((isset($_GET['elar'])) && ($_GET['elar'] != ""))) {
+	$elimarch = $_GET['elar'];
+	@unlink("docOD/".$elimarch);
+  $deleteSQL = sprintf("DELETE FROM orden_dia WHERE id=%s",
+                       GetSQLValueString($_GET['idelim'], "int"));
+
+  mysql_select_db($database_Conexx, $Conexx);
+  $Result1 = mysql_query($deleteSQL, $Conexx) or die(mysql_error());
+
+  $deleteGoTo = "eok.php";
+  if (isset($_SERVER['QUERY_STRING'])) {
+    $deleteGoTo .= (strpos($deleteGoTo, '?')) ? "&" : "?";
+    $deleteGoTo .= $_SERVER['QUERY_STRING'];
+  }
+  header(sprintf("Location: %s", $deleteGoTo));
+}
+
 $colname_elim = "-1";
 if (isset($_GET['ide'])) {
   $colname_elim = $_GET['ide'];
@@ -57,7 +74,7 @@ $totalRows_elim = mysql_num_rows($elim);
   <?php echo $row_elim['tipo']; ?>
 </p>
 <p>&nbsp;</p>
-<p>SI</p>
+<p><a href="elim.php?idelim=<?php echo $row_elim['id']; ?>&elar=<?php echo $row_elim['arch']; ?>">SI</a> - <a href="mantto.php">NO</a></p>
 </body>
 </html>
 <?php
