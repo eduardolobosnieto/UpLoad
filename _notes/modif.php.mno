@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_modif" value="name:id;datatype:int,name:arch;datatype:string,name:numero_od;datatype:string,name:fecha_aa;datatype:int,name:fecha_mm;datatype:int,name:fecha_dd;datatype:int,name:tipo;datatype:int" />
+</info>
