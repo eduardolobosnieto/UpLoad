@@ -66,7 +66,15 @@ $totalRows_modif = mysql_num_rows($modif);
 <html>
 <head>
 <meta charset="utf-8">
-<title>Documento sin título</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<title>Orden del D&iacute;a</title>
 </head>
 
 <body>
@@ -75,7 +83,7 @@ $totalRows_modif = mysql_num_rows($modif);
 </p>
 <form id="formulario" name="formulario" method="POST" action="<?php echo $editFormAction; ?>">
   <p>
-  <a href="docOD/<?php echo $row_modif['arch']; ?>">ARCHIVO</a> </p>
+  <a href="docOD/<?php echo $row_modif['arch']; ?>" target="_blank">ARCHIVO</a> </p>
   <input name="gid" type="hidden" value="<?php echo $row_modif['id']; ?>">
   <p>
     <label for="numero_od">Numero Orden D&iacute;a</label>
@@ -102,6 +110,8 @@ $totalRows_modif = mysql_num_rows($modif);
   <input type="hidden" name="MM_update" value="formulario">
 </form>
 <p>&nbsp;</p>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 
 </body>
 </html>

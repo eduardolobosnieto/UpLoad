@@ -62,7 +62,15 @@ $totalRows_elim = mysql_num_rows($elim);
 <html>
 <head>
 <meta charset="utf-8">
-<title>Documento sin título</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<title>Orden del D&iacute;a</title>
 </head>
 
 <body>
@@ -75,6 +83,9 @@ $totalRows_elim = mysql_num_rows($elim);
 </p>
 <p>&nbsp;</p>
 <p><a href="elim.php?idelim=<?php echo $row_elim['id']; ?>&elar=<?php echo $row_elim['arch']; ?>">SI</a> - <a href="mantto.php">NO</a></p>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
 </body>
 </html>
 <?php
